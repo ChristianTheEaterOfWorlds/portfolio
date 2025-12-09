@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import "../styles/Work.css"
+import "../Styles/Work.css"
 
 // Load initial projects from localStorage or use defaults
 const getInitialProjects = () => {

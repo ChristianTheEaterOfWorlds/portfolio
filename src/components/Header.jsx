@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import "../styles/Header.css"
+import "../Styles/Header.css"
 import AdminLoginModal from './AdminLoginModal'
 
 function Header() {

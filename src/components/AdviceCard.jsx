@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../styles/AdviceCard.css";
+import "../Styles/AdviceCard.css";
 
 function AdviceCard() {
   const [advice, setAdvice] = useState("");
