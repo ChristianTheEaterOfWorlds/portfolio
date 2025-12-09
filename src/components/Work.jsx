@@ -12,19 +12,19 @@ const getInitialProjects = () => {
       id: 1,
       title: "Flutter Project",
       description: "A BMI calculator app that displays accurate BMI based on the inputs.",
-      image: "/src/assets/mrbmi.jpg",
+      image: "/assets/mrbmi.jpg",
     },
     {
       id: 2,
       title: "Todo App",
       description: "A simple task manager using Node.js and MongoDB.",
-      image: "/src/assets/portfoliopic.png",
+      image: "/assets/portfoliopic.png",
     },
     {
       id: 3,
       title: "Business Landing Page",
       description: "Landing page for a small business with modern UI design.",
-      image: "/src/assets/manFace.png",
+      image: "/assets/manFace.png",
     },
   ]
 }
