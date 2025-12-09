@@ -103,30 +103,49 @@ const Work = () => {
       <p>Here are some projects I've worked on recently</p>
 
       {isAdmin && (
-        <div style={{ marginBottom: 20 }}>
+        <div style={{ marginBottom: 40, maxWidth: '800px', margin: '30px auto 40px' }}>
           {!showForm ? (
             <button 
               onClick={() => setShowForm(true)}
               style={{
-                padding: '10px 20px',
-                fontSize: '14px',
+                padding: '12px 28px',
+                fontSize: '15px',
                 border: 'none',
-                borderRadius: '4px',
+                borderRadius: '5px',
                 cursor: 'pointer',
-                background: '#28a745',
-                color: 'white'
+                background: '#4b0082',
+                color: 'white',
+                fontWeight: '600',
+                transition: 'all 0.3s ease',
+                boxShadow: '0 2px 8px rgba(75, 0, 130, 0.3)'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.background = '#360062'
+                e.target.style.transform = 'translateY(-2px)'
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.background = '#4b0082'
+                e.target.style.transform = 'translateY(0)'
               }}
             >
               + Add Project
             </button>
           ) : (
             <div style={{
-              background: '#f8f9fa',
-              padding: '20px',
-              borderRadius: '8px',
-              border: '1px solid #ddd'
+              background: 'white',
+              padding: '30px',
+              borderRadius: '10px',
+              border: '2px solid #4b0082',
+              boxShadow: '0 4px 20px rgba(75, 0, 130, 0.15)'
             }}>
-              <h3 style={{ marginTop: 0 }}>Add New Project</h3>
+              <h3 style={{ 
+                marginTop: 0, 
+                marginBottom: 25,
+                fontSize: '24px',
+                fontWeight: '600',
+                color: '#333',
+                textAlign: 'center'
+              }}>Add New Project</h3>
               <form onSubmit={handleAddProject}>
                 <input
                   type="text"
@@ -136,13 +155,17 @@ const Work = () => {
                   required
                   style={{
                     width: '100%',
-                    padding: '10px',
-                    marginBottom: '10px',
-                    fontSize: '14px',
-                    border: '1px solid #ddd',
-                    borderRadius: '4px',
-                    boxSizing: 'border-box'
+                    padding: '14px 16px',
+                    marginBottom: '16px',
+                    fontSize: '15px',
+                    border: '2px solid #4b0082',
+                    borderRadius: '5px',
+                    boxSizing: 'border-box',
+                    transition: 'border-color 0.3s ease',
+                    outline: 'none'
                   }}
+                  onFocus={(e) => e.target.style.borderColor = '#360062'}
+                  onBlur={(e) => e.target.style.borderColor = '#4b0082'}
                 />
                 <input
                   type="text"
@@ -152,13 +175,17 @@ const Work = () => {
                   required
                   style={{
                     width: '100%',
-                    padding: '10px',
-                    marginBottom: '10px',
-                    fontSize: '14px',
-                    border: '1px solid #ddd',
-                    borderRadius: '4px',
-                    boxSizing: 'border-box'
+                    padding: '14px 16px',
+                    marginBottom: '16px',
+                    fontSize: '15px',
+                    border: '2px solid #4b0082',
+                    borderRadius: '5px',
+                    boxSizing: 'border-box',
+                    transition: 'border-color 0.3s ease',
+                    outline: 'none'
                   }}
+                  onFocus={(e) => e.target.style.borderColor = '#360062'}
+                  onBlur={(e) => e.target.style.borderColor = '#4b0082'}
                 />
                 <textarea
                   placeholder="Project Description"
@@ -167,27 +194,45 @@ const Work = () => {
                   required
                   style={{
                     width: '100%',
-                    padding: '10px',
-                    marginBottom: '10px',
-                    fontSize: '14px',
-                    border: '1px solid #ddd',
-                    borderRadius: '4px',
-                    minHeight: '80px',
-                    boxSizing: 'border-box'
+                    padding: '14px 16px',
+                    marginBottom: '20px',
+                    fontSize: '15px',
+                    border: '2px solid #4b0082',
+                    borderRadius: '5px',
+                    minHeight: '100px',
+                    boxSizing: 'border-box',
+                    resize: 'vertical',
+                    fontFamily: 'inherit',
+                    transition: 'border-color 0.3s ease',
+                    outline: 'none'
                   }}
+                  onFocus={(e) => e.target.style.borderColor = '#360062'}
+                  onBlur={(e) => e.target.style.borderColor = '#4b0082'}
                 />
-                <div style={{ display: 'flex', gap: 8 }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
                   <button 
                     type="submit"
                     style={{
-                      padding: '10px 20px',
-                      fontSize: '14px',
+                      padding: '14px 24px',
+                      fontSize: '16px',
                       border: 'none',
-                      borderRadius: '4px',
+                      borderRadius: '5px',
                       cursor: 'pointer',
-                      background: '#007bff',
+                      background: '#4b0082',
                       color: 'white',
-                      flex: 1
+                      fontWeight: '600',
+                      transition: 'all 0.3s ease',
+                      boxShadow: '0 2px 8px rgba(75, 0, 130, 0.3)'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.target.style.background = '#360062'
+                      e.target.style.transform = 'translateY(-2px)'
+                      e.target.style.boxShadow = '0 4px 12px rgba(75, 0, 130, 0.4)'
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.background = '#4b0082'
+                      e.target.style.transform = 'translateY(0)'
+                      e.target.style.boxShadow = '0 2px 8px rgba(75, 0, 130, 0.3)'
                     }}
                   >
                     Add Project
@@ -199,14 +244,25 @@ const Work = () => {
                       setForm({ title: '', description: '', image: '' })
                     }}
                     style={{
-                      padding: '10px 20px',
-                      fontSize: '14px',
-                      border: 'none',
-                      borderRadius: '4px',
+                      padding: '14px 24px',
+                      fontSize: '16px',
+                      border: '2px solid #4b0082',
+                      borderRadius: '5px',
                       cursor: 'pointer',
-                      background: '#6c757d',
-                      color: 'white',
-                      flex: 1
+                      background: 'white',
+                      color: '#4b0082',
+                      fontWeight: '600',
+                      transition: 'all 0.3s ease'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.target.style.background = '#4b0082'
+                      e.target.style.color = 'white'
+                      e.target.style.transform = 'translateY(-2px)'
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.background = 'white'
+                      e.target.style.color = '#4b0082'
+                      e.target.style.transform = 'translateY(0)'
                     }}
                   >
                     Cancel
