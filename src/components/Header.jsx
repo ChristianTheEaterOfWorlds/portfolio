@@ -27,9 +27,47 @@ function Header() {
         <a href="#resume" className="btn-outline">My Resume</a>
         <a href= "https://www.facebook.com/share/p/1Aj8SSNKsS/"  className="btn-primary" target="_blank">Hire Me Now</a>
         {!isAdmin ? (
-          <button className="btn-outline" onClick={() => setShowLoginModal(true)}>Admin</button>
+          <button 
+            onClick={() => setShowLoginModal(true)}
+            style={{
+              background: 'transparent',
+              border: 'none',
+              cursor: 'pointer',
+              fontSize: '24px',
+              padding: '8px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              color: '#4b0082',
+              transition: 'transform 0.2s'
+            }}
+            onMouseEnter={(e) => e.target.style.transform = 'scale(1.1)'}
+            onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
+            title="Admin Login"
+          >
+            🔐
+          </button>
         ) : (
-          <button className="btn-outline" onClick={handleLogout}>Logout</button>
+          <button 
+            onClick={handleLogout}
+            style={{
+              background: 'transparent',
+              border: 'none',
+              cursor: 'pointer',
+              fontSize: '24px',
+              padding: '8px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              color: '#4b0082',
+              transition: 'transform 0.2s'
+            }}
+            onMouseEnter={(e) => e.target.style.transform = 'scale(1.1)'}
+            onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
+            title="Logout"
+          >
+            🚪
+          </button>
         )}
       </div>
       {showLoginModal && (
