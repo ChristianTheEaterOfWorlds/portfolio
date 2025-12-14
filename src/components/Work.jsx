@@ -1,33 +1,27 @@
 import React, { useState, useEffect } from "react"
 import "../Styles/Work.css"
 
-// Load initial projects from localStorage or use defaults
-const getInitialProjects = () => {
-  const saved = localStorage.getItem('portfolio_projects')
-  if (saved) {
-    return JSON.parse(saved)
-  }
-  return [
-    {
-      id: 1,
-      title: "Flutter Project",
-      description: "A BMI calculator app that displays accurate BMI based on the inputs.",
-      image: "/assets/mrbmi.jpg",
-    },
-    {
-      id: 2,
-      title: "Personal Portfolio Website",
-      description: "A personal portfolio website built with React to showcase projects and skills.",
-      image: "/assets/portfoliopic.png",
-    },
-    {
-      id: 3,
-      title: "Business Landing Page",
-      description: "Landing page for a small business with modern UI design.",
-      image: "/assets/manFace.png",
-    },
-  ]
-}
+// Initial projects data
+const initialProjects = [
+  {
+    id: 1,
+    title: "Flutter Project",
+    description: "A BMI calculator app that displays accurate BMI based on the inputs.",
+    image: "/assets/mrbmi.jpg",
+  },
+  {
+    id: 2,
+    title: "Personal Portfolio Website",
+    description: "A personal portfolio website built with React to showcase projects and skills.",
+    image: "/assets/portfoliopic.png",
+  },
+  {
+    id: 3,
+    title: "Business Landing Page",
+    description: "Landing page for a small business with modern UI design.",
+    image: "/assets/manFace.png",
+  },
+]
 
 // Reusable Card component
 const ProjectCard = ({ title, description, image, onDelete, isAdmin }) => {
@@ -61,7 +55,7 @@ const ProjectCard = ({ title, description, image, onDelete, isAdmin }) => {
 
 // Work Section
 const Work = () => {
-  const [projects, setProjects] = useState(getInitialProjects())
+  const [projects, setProjects] = useState(initialProjects)
   const [isAdmin, setIsAdmin] = useState(localStorage.getItem('isAdmin') === '1')
   const [showForm, setShowForm] = useState(false)
   const [form, setForm] = useState({ title: '', description: '', image: '' })
@@ -72,11 +66,6 @@ const Work = () => {
     const interval = setInterval(checkAdmin, 500)
     return () => clearInterval(interval)
   }, [])
-
-  // Save projects to localStorage whenever they change
-  useEffect(() => {
-    localStorage.setItem('portfolio_projects', JSON.stringify(projects))
-  }, [projects])
 
   function handleAddProject(e) {
     e.preventDefault()
@@ -103,7 +92,7 @@ const Work = () => {
       <p>Here are some projects I've worked on recently</p>
 
       {isAdmin && (
-        <div style={{ marginBottom: 40, maxWidth: '800px', margin: '30px auto 40px' }}>
+        <div style={{ maxWidth: '800px', margin: '30px auto 40px' }}>
           {!showForm ? (
             <button 
               onClick={() => setShowForm(true)}
