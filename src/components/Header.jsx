@@ -24,7 +24,7 @@ function Header() {
         <li><a href="#mywork">My Work</a></li>
       </ul>
       <div className="nav-buttons">
-        <a href="#resume" className="btn-outline">My Resume</a>
+        <a href="https://docs.google.com/document/d/12AScH3jLcHTt8h6miiqrYh3HuryeIIF3/edit?usp=sharing&ouid=104794617499536631306&rtpof=true&sd=true" className="btn-outline" target="_blank">My Resume</a>
         <a href= "https://www.facebook.com/share/p/1Aj8SSNKsS/"  className="btn-primary" target="_blank">Hire Me Now</a>
         {!isAdmin ? (
           <button 
