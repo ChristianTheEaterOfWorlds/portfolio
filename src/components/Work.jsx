@@ -16,8 +16,8 @@ const getInitialProjects = () => {
     },
     {
       id: 2,
-      title: "Todo App",
-      description: "A simple task manager using Node.js and MongoDB.",
+      title: "Personal Portfolio Website",
+      description: "A personal portfolio website built with React to showcase projects and skills.",
       image: "/assets/portfoliopic.png",
     },
     {
