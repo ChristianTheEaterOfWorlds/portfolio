@@ -11,9 +11,7 @@ function About() {
         I enjoy building dynamic and user-friendly web applications that 
         solve real-world problems and help businesses grow..
       </p>
-      <div className="about-buttons">
-        <a href="https://www.facebook.com/share/r/19bHTSYSkf/" className="btn-primary" target ="_blank">Hire Me Now</a>
-      </div>
+      
     </section>
   )
 }

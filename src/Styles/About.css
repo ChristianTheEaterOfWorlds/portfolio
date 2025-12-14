@@ -17,8 +17,3 @@
   line-height: 1.6;
 }
 
-.about-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-}
