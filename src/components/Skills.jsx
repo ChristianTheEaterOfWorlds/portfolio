@@ -1,27 +1,24 @@
 import React from "react"
-import "../Styles/Skills.css"
 
 function Skills() {
+    const skills = [
+        "WordPress", "Godot", "Elementor", "Node.js", "JavaScript", "Next.js",
+        "CSS", "Java", "C#", "HTML", "React.js", "Git", "Python", "GitHub",
+        "Figma", "MySQL", "Microsoft Excel"
+    ]
+
     return (
-        <section className="skills">
-            <span>WordPress</span>
-            <span>Godot</span>
-            <span>Elementor</span>
-            <span>Node.js</span>
-            <span>JavaScript</span>
-            <span>Next.js</span>
-            <span>CSS</span>
-            <span>Java</span>
-            <span>C#</span>
-            <span>HTML</span>
-            <span>React.js</span>
-            <span>Git</span>
-            <span>Python</span>
-            <span>GitHub</span>
-            <span>Figma</span>
-            <span>MySQL</span>
-            <span>Microsoft Excel</span>
-            
+        <section className="py-20 bg-gradient-to-br from-purple-800 to-purple-900">
+            <div className="container mx-auto px-6">
+                <h2 className="text-4xl font-bold text-center text-white mb-12">⚡ Tech Stack</h2>
+                <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
+                    {skills.map((skill, index) => (
+                        <span key={index} className="px-6 py-3 bg-white/10 backdrop-blur-sm text-white border border-white/20 rounded-full font-semibold hover:bg-white hover:text-purple-800 hover:scale-110 transition-all duration-300 cursor-default shadow-lg">
+                            {skill}
+                        </span>
+                    ))}
+                </div>
+            </div>
         </section>
     )
 }

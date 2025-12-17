@@ -1,5 +1,4 @@
 import React from "react"
-import "../Styles/Work.css"
 
 // Initial projects data
 const initialProjects = [
@@ -26,10 +25,15 @@ const initialProjects = [
 // Reusable Card component
 const ProjectCard = ({ title, description, image }) => {
   return (
-    <div className="project-card">
-      <img src={image} alt={title} />
-      <h3>{title}</h3>
-      <p>{description}</p>
+    <div className="group bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-purple-100">
+      <div className="relative overflow-hidden h-56">
+        <img src={image} alt={title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        <div className="absolute inset-0 bg-gradient-to-t from-purple-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-800 transition-colors">{title}</h3>
+        <p className="text-gray-600 leading-relaxed">{description}</p>
+      </div>
     </div>
   )
 }
@@ -37,19 +41,25 @@ const ProjectCard = ({ title, description, image }) => {
 // Work Section
 const Work = () => {
   return (
-    <section className="work-section">
-      <h2>MY WORK</h2>
-      <p>Here are some projects I've worked on recently</p>
+    <section id="work" className="py-20 bg-gradient-to-br from-purple-50 via-white to-purple-50">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            🚀 <span className="bg-gradient-to-r from-purple-800 to-purple-600 bg-clip-text text-transparent">MY WORK</span>
+          </h2>
+          <p className="text-gray-600 text-lg">Here are some projects I've worked on recently</p>
+        </div>
 
-      <div className="projects-grid">
-        {initialProjects.map((project) => (
-          <ProjectCard
-            key={project.id}
-            title={project.title}
-            description={project.description}
-            image={project.image}
-          />
-        ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {initialProjects.map((project) => (
+            <ProjectCard
+              key={project.id}
+              title={project.title}
+              description={project.description}
+              image={project.image}
+            />
+          ))}
+        </div>
       </div>
     </section>
   )

@@ -5,8 +5,7 @@ import Skills from "./components/Skills"
 import About from "./components/About"
 import Work from "./components/Work"
 import Footer from "./components/Footer"
-import AdviceCard from "./components/AdviceCard";
-import "./Styles/App.css"
+import AdviceCard from "./components/AdviceCard"
 
 function App() {
   return (
@@ -15,7 +14,7 @@ function App() {
       <Hero />
       <Skills />
       <About />
-      <Work />   
+      <Work />
       <AdviceCard />
       <Footer />
     </div>
