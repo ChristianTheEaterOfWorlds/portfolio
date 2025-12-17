@@ -1,14 +1,23 @@
 import { useState } from 'react';
+import HCaptcha from '@hcaptcha/react-hcaptcha';
 
 export default function ContactForm() {
   const [result, setResult] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [captchaToken, setCaptchaToken] = useState(null);
 
   const onSubmit = async (event) => {
     event.preventDefault();
+    
+    if (!captchaToken) {
+      setResult("Please complete the captcha verification");
+      return;
+    }
+    
     setIsSubmitting(true);
     const formData = new FormData(event.target);
     formData.append("access_key", "d56d3221-b485-4d5a-9827-de7f8bd4d58c");
+    formData.append("h-captcha-response", captchaToken);
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
@@ -21,8 +30,14 @@ export default function ContactForm() {
     
     if (data.success) {
       event.target.reset();
+      setCaptchaToken(null);
       setTimeout(() => setResult(""), 5000);
     }
+  };
+
+  const onHCaptchaChange = (token) => {
+    setCaptchaToken(token);
+    setResult(""); // Clear any previous error messages
   };
 
   return (
@@ -63,6 +78,13 @@ export default function ContactForm() {
         ></textarea>
       </div>
       
+      {/* hCaptcha */}
+      <HCaptcha
+        sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
+        onVerify={onHCaptchaChange}
+        reCaptchaCompat={false}
+      />
+      
       <button 
         type="submit"
         disabled={isSubmitting}
@@ -76,6 +98,7 @@ export default function ContactForm() {
           {result}
         </p>
       )}
+
     </form>
   );
 }
