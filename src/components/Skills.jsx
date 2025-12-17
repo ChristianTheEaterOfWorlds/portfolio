@@ -2,7 +2,7 @@ import React from "react"
 
 function Skills() {
     const skills = [
-        "WordPress", "Godot", "Elementor", "Node.js", "JavaScript", "Next.js",
+        "WordPress", "Godot", "Elementor", "Tailwind CSS", "JavaScript", "Next.js",
         "CSS", "Java", "C#", "HTML", "React.js", "Git", "Python", "GitHub",
         "Figma", "MySQL", "Microsoft Excel"
     ]
