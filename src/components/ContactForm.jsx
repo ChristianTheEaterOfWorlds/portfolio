@@ -22,14 +22,23 @@ export default function ContactForm() {
     setIsSubmitting(true);
     setResult("");
 
-    const formData = new FormData(event.target);
-    formData.append("access_key", "d56d3221-b485-4d5a-9827-de7f8bd4d58c");
-    formData.append("h-captcha-response", captchaToken);
-
     try {
+      const formData = new FormData(event.target);
+      formData.append("access_key", "d56d3221-b485-4d5a-9827-de7f8bd4d58c");
+      formData.append("h-captcha-response", captchaToken);
+
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        body: formData
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "d56d3221-b485-4d5a-9827-de7f8bd4d58c",
+          name: formData.get("name"),
+          email: formData.get("email"),
+          message: formData.get("message"),
+          "h-captcha-response": captchaToken,
+        }),
       });
 
       const data = await response.json();
@@ -42,7 +51,8 @@ export default function ContactForm() {
         
         setTimeout(() => setResult(""), 5000);
       } else {
-        setResult("Failed to send. Please try again.");
+        setResult(data.message || "Failed to send. Please try again.");
+        console.error("Web3Forms error:", data);
       }
     } catch (error) {
       console.error('Form submission error:', error);
