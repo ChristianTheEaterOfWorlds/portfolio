@@ -46,8 +46,8 @@ function Hero() {
           </div>
           <div className="flex justify-center">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl blur-2xl opacity-30"></div>
-              <img src={image} alt="Christian Roque" className="relative w-[450px] h-[450px] object-cover rounded-2xl shadow-2xl ring-4 ring-purple-100" />
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full blur-2xl opacity-30"></div>
+              <img src={image} alt="Christian Roque" className="relative w-[450px] h-[450px] object-cover rounded-full shadow-2xl ring-4 ring-purple-100" />
             </div>
           </div>
         </div>
