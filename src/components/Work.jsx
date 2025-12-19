@@ -45,7 +45,7 @@ const Work = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-900 mb-4 tracking-tight">
-            🚀 <span className="bg-gradient-to-r from-sky-600 to-blue-600 bg-clip-text text-transparent">MY WORK</span>
+           <span className="bg-gradient-to-r from-sky-600 to-blue-600 bg-clip-text text-transparent">MY WORK</span>
           </h2>
           <p className="text-gray-600 text-lg">Here are some projects I've worked on recently</p>
         </div>

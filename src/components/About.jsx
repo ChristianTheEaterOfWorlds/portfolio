@@ -6,7 +6,7 @@ function About() {
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold text-center text-gray-900 mb-8 tracking-tight">
-            👨‍💻 <span className="bg-gradient-to-r from-sky-600 to-blue-600 bg-clip-text text-transparent">ABOUT ME</span>
+            <span className="bg-gradient-to-r from-sky-600 to-blue-600 bg-clip-text text-transparent">ABOUT ME</span>
           </h2>
           <div className="bg-gradient-to-br from-sky-50 to-blue-50 p-8 rounded-2xl shadow-xl border border-sky-100">
             <p className="text-gray-700 text-lg leading-relaxed text-center">
