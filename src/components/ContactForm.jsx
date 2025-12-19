@@ -71,7 +71,7 @@ export default function ContactForm() {
           id="name"
           name="name" 
           required
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-800 focus:border-transparent outline-none transition-all"
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-600 focus:border-transparent outline-none transition-all"
           placeholder="Your name"
         />
       </div>
@@ -83,7 +83,7 @@ export default function ContactForm() {
           id="email"
           name="email" 
           required
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-800 focus:border-transparent outline-none transition-all"
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-600 focus:border-transparent outline-none transition-all"
           placeholder="your@email.com"
         />
       </div>
@@ -95,7 +95,7 @@ export default function ContactForm() {
           name="message" 
           required
           rows="4"
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-800 focus:border-transparent outline-none transition-all resize-none"
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-600 focus:border-transparent outline-none transition-all resize-none"
           placeholder="Write your message here..."
         ></textarea>
       </div>
@@ -112,7 +112,7 @@ export default function ContactForm() {
       <button 
         type="submit"
         disabled={isSubmitting || !captchaToken}
-        className="w-full px-8 py-4 bg-purple-800 text-white rounded-lg hover:bg-purple-900 transition-all font-semibold shadow-xl hover:shadow-2xl disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full px-8 py-4 bg-sky-600 text-white rounded-lg hover:bg-blue-700 transition-all font-semibold shadow-xl hover:shadow-2xl disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {isSubmitting ? "Sending..." : "Send Message"}
       </button>

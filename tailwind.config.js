@@ -7,8 +7,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#4b0082',
-        'primary-dark': '#360062',
+        primary: '#0ea5e9',
+        'primary-dark': '#0284c7',
+      },
+      fontFamily: {
+        sans: ['Inter', 'SF Pro Display', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
       },
     },
   },
