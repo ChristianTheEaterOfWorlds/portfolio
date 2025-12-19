@@ -15,7 +15,7 @@ function Header() {
           </ul>
         </nav>
         <div className="flex gap-3">
-          <a href="https://docs.google.com/document/d/12AScH3jLcHTt8h6miiqrYh3HuryeIIF3/edit?usp=sharing&ouid=104794617499536631306&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" className="px-5 py-2 border-2 border-purple-800 text-purple-800 rounded-lg hover:bg-purple-800 hover:text-white transition-all font-semibold">
+          <a href="/assets/CV-Roque-Christian.pdf" target="_blank" rel="noopener noreferrer" className="px-5 py-2 border-2 border-purple-800 text-purple-800 rounded-lg hover:bg-purple-800 hover:text-white transition-all font-semibold">
             Resume
           </a>
         </div>
