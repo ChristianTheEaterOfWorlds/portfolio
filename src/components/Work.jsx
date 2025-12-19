@@ -12,7 +12,7 @@ const initialProjects = [
     id: 2,
     title: "Personal Portfolio Website",
     description: "A personal portfolio website built with React to showcase projects and skills.",
-    image: "/assets/portfoliopic.png",
+    image: "/assets/portfopng.png",
   },
   {
     id: 3,
