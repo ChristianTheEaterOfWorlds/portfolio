@@ -14,11 +14,6 @@ function Header() {
             <li><a href="#work" className="text-gray-700 hover:text-sky-600 transition-colors font-medium">Work</a></li>
           </ul>
         </nav>
-        <div className="flex gap-3">
-          <a href="/assets/CV-Roque-Christian.pdf" target="_blank" rel="noopener noreferrer" className="px-5 py-2 border-2 border-sky-600 text-sky-600 rounded-lg hover:bg-sky-600 hover:text-white transition-all font-semibold">
-            Resume
-          </a>
-        </div>
       </div>
     </header>
   )
