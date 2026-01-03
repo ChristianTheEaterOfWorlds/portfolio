@@ -16,9 +16,9 @@ const initialProjects = [
   },
   {
     id: 3,
-    title: "Business Landing Page",
-    description: "Landing page for a small business with modern UI design.",
-    image: "/assets/manFace.png",
+    title: "The Breeder",
+    description: "A dog breeding and trait matching website built with HTML, CSS, and JavaScript.",
+    image: "/assets/daBreeder.png",
   },
 ]
 
